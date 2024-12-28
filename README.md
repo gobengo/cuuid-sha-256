@@ -4,6 +4,15 @@ content addressed UUID using SHA-256.
 
 As defined in [RFC 9562 S B.2](https://datatracker.ietf.org/doc/html/rfc9562#name-example-of-a-uuidv8-value-n).
 
+## CLI
+
+```shell
+$ npx cuuid-sha-256 hi
+bd97808c-95bb-8be7-84e9-89db07656caf
+$ echo -n hi | npx cuuid-sha-256
+bd97808c-95bb-8be7-84e9-89db07656caf
+```
+
 ## Usage
 
 ```javascript

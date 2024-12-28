@@ -6,7 +6,7 @@ import CUUID from "./index.ts"
 import { text } from "node:stream/consumers"
 import fs from "fs/promises"
 
-const UUID_NAMESPACE_DNS = '6ba7b810-9dad-11d1-80b4-00c04fd430c8' as const
+const CUUID_DATA_STREAM_NS = '026d1093-7ee7-570b-b78c-add35fa5ec5b' as const
 
 // if process is running this script as main
 if (await fs.realpath(globalThis?.process?.argv?.[1]) === fileURLToPath(import.meta.url)) {
@@ -17,6 +17,12 @@ async function main(...argv: string[]) {
   const parsedArgs = parseArgs({
     args: argv,
     allowPositionals: true,
+    options: {
+      namespace: {
+        type: 'string',
+        default: CUUID_DATA_STREAM_NS,
+      }
+    }
   })
   let valueString: string
   if (!process.stdin.isTTY) {
@@ -28,7 +34,7 @@ async function main(...argv: string[]) {
   }
   if ( ! valueString) throw new Error(`unable to determine value to get cuuid of`)
   const cuuid = new CUUID({
-    namespace: UUID_NAMESPACE_DNS,
+    namespace: parsedArgs.values.namespace,
     name: valueString,
   })
   console.debug(await cuuid.toString())

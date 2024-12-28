@@ -23,9 +23,16 @@ export default class CUUIDv8SHA2 {
     const value = options.name
     const valueBytes: Uint8Array = typeof value === 'string' ? stringToBytes(value) : value;
     const { namespace } = this.#options
-    const namespaceBytes: Uint8Array = typeof namespace === 'string' ? parse(namespace) : namespace;
-    if (namespaceBytes?.length !== 16) {
-      throw TypeError('Namespace must be array-like (16 iterable integer values, 0-255)');
+    // validate namespace
+    try {
+      const namespaceBytes: Uint8Array = typeof namespace === 'string' ? parse(namespace) : namespace;
+      if (namespaceBytes?.length !== 16) {
+        throw TypeError('Namespace must be array-like (16 iterable integer values, 0-255)');
+      }
+    } catch (error) {
+      throw new Error(`invalid namespace`, {
+        cause: error,
+      })
     }
   }
   async toString(): Promise<UUID> {
