@@ -1,7 +1,7 @@
 import { parse, stringify } from "uuid";
-import v35, { stringToBytes } from "./v35.js"
-import { UUID } from "./types.js";
-import { hexToBuffer } from "./hex.js";
+import v35, { stringToBytes } from "./v35.ts"
+import type { UUID } from "./types.ts";
+import { hexToBuffer } from "./hex.ts";
 
 const sha256 = async function (data: Uint8Array) {
   const buf = await crypto.subtle.digest('SHA-256', data).then(d => new Uint8Array(d))

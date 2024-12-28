@@ -4,7 +4,7 @@ type UUIDTypes = string | Uint8Array;
 
 import { parse } from "uuid"
 import { stringify as unsafeStringify } from 'uuid';
-import { UUID } from "./types.js";
+import type { UUID } from "./types.ts";
 
 export function stringToBytes(str: string) {
   // TODO: Use TextEncoder (see https://stackoverflow.com/a/48762658/109538)
