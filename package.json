@@ -1,0 +1,24 @@
+{
+  "name": "cuuid-sha-256",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "import": "./index.ts"
+    }
+  },
+  "scripts": {
+    "test": "tsx --test",
+    "tsc": "tsc --build",
+    "prepare": "npm run tsc"
+  },
+  "dependencies": {
+    "uuid": "^11.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2"
+  }
+}
