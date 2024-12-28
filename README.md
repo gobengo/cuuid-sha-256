@@ -31,6 +31,7 @@ export async function getCUUIDForObject(object) {
     // https://bengo.is/blogging/syntax-of-a-CUUID/#data-stream-cuuids
     namespace: '026d1093-7ee7-570b-b78c-add35fa5ec5b',
     name: canonicalize(object),
-  }) 
+  })
+  return await cuuid.toString()
 }
 ```
