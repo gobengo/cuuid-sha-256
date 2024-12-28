@@ -2,6 +2,10 @@
   "name": "cuuid-sha-256",
   "type": "module",
   "version": "1.1.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gobengo/cuuid-sha-256.git"
+  },
   "main": "lib/index.js",
   "exports": {
     ".": {
