@@ -6,7 +6,7 @@
   "exports": {
     ".": {
       "types": "./index.ts",
-      "import": "./index.ts"
+      "default": "./lib/index.js"
     }
   },
   "scripts": {
