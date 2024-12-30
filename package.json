@@ -19,11 +19,11 @@
     "prepare": "npm run tsc"
   },
   "dependencies": {
-    "uuid": "^11.0.3"
+    "uuid": "^11.0.3",
+    "tsx": "^4.19.2"
   },
   "devDependencies": {
-    "@types/node": "^22.10.2",
-    "tsx": "^4.19.2"
+    "@types/node": "^22.10.2"
   },
   "bin": "./cli.ts"
 }

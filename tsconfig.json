@@ -12,8 +12,6 @@
     "checkJs": true,
     "allowJs": true,
     "outDir": "lib",
-    "emitDeclarationOnly": true,
-    "allowImportingTsExtensions": true,
     "lib": [
       "ESNext",
     ]

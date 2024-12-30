@@ -1,8 +1,8 @@
-#!/usr/bin/env node --no-warnings=ExperimentalWarning --experimental-strip-types
+#!/usr/bin/env -S npx tsx
 
 import { fileURLToPath } from "node:url"
 import { parseArgs } from "node:util"
-import CUUID from "./index.ts"
+import CUUID from "./index.js"
 import { text } from "node:stream/consumers"
 import fs from "fs/promises"
 
